@@ -1,0 +1,32 @@
+@import "./variables.css";
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.news-card {
+  background: var(--card);
+}
+@media (max-width: 768px) {
+  header nav {
+    display: none !important;
+  }
+
+  header button {
+    display: block !important;
+  }
+}
