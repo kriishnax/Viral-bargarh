@@ -31,7 +31,7 @@ export default function NewsCard({
       {/* Image */}
       <div style={styles.imageWrap}>
         <img
-          src={image || "/src/assets/news/placeholder.jpg"}
+          src={image || "/news/placeholder.jpg"}
           alt={title}
           style={styles.image}
         />

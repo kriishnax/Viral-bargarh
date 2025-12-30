@@ -27,7 +27,7 @@ export default function Home() {
   summary={content.topStory.summary}
   category={lang === "en" ? "Featured" : "ବିଶେଷ"}
   articleId="1"
-  image="/src/assets/news/placeholder.jpg"
+  image="/news/placeholder.jpg"
 />
 
 

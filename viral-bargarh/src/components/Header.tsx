@@ -91,8 +91,8 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   logo: {
-    width: "36px",
-    height: "36px",
+    width: "90px",
+    height: "50px",
   },
 
   name: {
