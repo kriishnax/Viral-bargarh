@@ -4,7 +4,7 @@ export const articleData = {
   author: "Viral Bargarh Desk",
   date: "Sep 28, 2025",
   category: "District",
-  image: "/src/assets/news/placeholder.jpg",
+  image: "/news/placeholder.jpg",
   content: [
     "A major development has taken place in Bargarh district that is expected to bring positive change.",
     "According to officials, the initiative will improve infrastructure and public services.",

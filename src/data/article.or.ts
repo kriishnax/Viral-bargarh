@@ -4,7 +4,7 @@ export const articleData = {
   author: "ଭାଇରାଲ ବରଗଡ଼ ଡେସ୍କ",
   date: "ସେପ୍ଟେମ୍ବର 28, 2025",
   category: "ଜିଲ୍ଲା",
-  image: "/src/assets/news/placeholder.jpg",
+  image: "/news/placeholder.jpg",
   content: [
     "ବରଗଡ଼ ଜିଲ୍ଲାରେ ଘଟିଥିବା ଏକ ବଡ଼ ଉନ୍ନତି ସକାରାତ୍ମକ ପରିବର୍ତ୍ତନ ଆଣିବ ବୋଲି ଆଶା।",
     "ଅଧିକାରୀମାନଙ୍କ କହିବା ଅନୁସାରେ ଏହି ପଦକ୍ଷେପ ଢାଞ୍ଚା ଓ ସାର୍ବଜନୀନ ସେବାକୁ ଉନ୍ନତ କରିବ।",
