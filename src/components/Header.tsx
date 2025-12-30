@@ -8,33 +8,48 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <header style={styles.header}>
-      {/* Brand */}
+      {/* LEFT — BRAND */}
       <div style={styles.brand}>
         <img src={logo} alt="Viral Bargarh Logo" style={styles.logo} />
         <span style={styles.name}>Viral Bargarh</span>
       </div>
 
-      {/* Desktop Navigation */}
+      {/* CENTER — DESKTOP NAV */}
       <nav style={styles.navDesktop}>
         <NavLink to="/" style={navStyle}>
           Home
         </NavLink>
-        <NavLink to="/category" style={navStyle}>
+        <NavLink to="/category/district" style={navStyle}>
           District
+        </NavLink>
+        <NavLink to="/category/culture" style={navStyle}>
+          Culture
+        </NavLink>
+        <NavLink to="/category/development" style={navStyle}>
+          Development
+        </NavLink>
+        <NavLink to="/category/crime" style={navStyle}>
+          Crime
         </NavLink>
       </nav>
 
-      {/* Right Controls */}
+      {/* RIGHT — CONTROLS */}
       <div style={styles.controls}>
         <LanguageToggle />
 
-        <button onClick={toggleTheme} style={styles.themeBtn} aria-label="Theme">
+        <button
+          onClick={toggleTheme}
+          style={styles.themeBtn}
+          aria-label="Theme"
+        >
           {theme === "light" ? "🌙" : "☀️"}
         </button>
 
-        {/* Hamburger (Mobile) */}
+        {/* HAMBURGER (MOBILE) */}
         <button
           style={styles.hamburger}
           onClick={() => setOpen(!open)}
@@ -44,18 +59,39 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {open && (
         <div style={styles.mobileMenu}>
-          <NavLink to="/" onClick={() => setOpen(false)} style={styles.mobileLink}>
+          <NavLink to="/" onClick={closeMenu} style={styles.mobileLink}>
             Home
           </NavLink>
           <NavLink
-            to="/category"
-            onClick={() => setOpen(false)}
+            to="/category/district"
+            onClick={closeMenu}
             style={styles.mobileLink}
           >
             District
+          </NavLink>
+          <NavLink
+            to="/category/culture"
+            onClick={closeMenu}
+            style={styles.mobileLink}
+          >
+            Culture
+          </NavLink>
+          <NavLink
+            to="/category/development"
+            onClick={closeMenu}
+            style={styles.mobileLink}
+          >
+            Development
+          </NavLink>
+          <NavLink
+            to="/category/crime"
+            onClick={closeMenu}
+            style={styles.mobileLink}
+          >
+            Crime
           </NavLink>
         </div>
       )}
@@ -63,18 +99,21 @@ export default function Header() {
   );
 }
 
-/* Active link style */
+/* ================= ACTIVE LINK STYLE ================= */
+
 const navStyle = ({ isActive }: { isActive: boolean }) => ({
   fontWeight: isActive ? 600 : 500,
   color: isActive ? "var(--accent)" : "var(--text-primary)",
+  textDecoration: "none",
 });
 
-/* Styles */
+/* ================= STYLES ================= */
+
 const styles: Record<string, React.CSSProperties> = {
   header: {
     background: "var(--card)",
     borderBottom: "1px solid var(--border)",
-    padding: "0.75rem 1.25rem",
+    padding: "0.6rem 1.25rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -91,12 +130,13 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   logo: {
-    width: "90px",
-    height: "50px",
+    width: "60px",
+    height: "60px",
+    objectFit: "contain",
   },
 
   name: {
-    fontSize: "1.1rem",
+    fontSize: "1.05rem",
     fontWeight: 700,
     color: "var(--primary)",
     whiteSpace: "nowrap",
@@ -104,7 +144,7 @@ const styles: Record<string, React.CSSProperties> = {
 
   navDesktop: {
     display: "flex",
-    gap: "1.5rem",
+    gap: "1.25rem",
   },
 
   controls: {
@@ -116,7 +156,7 @@ const styles: Record<string, React.CSSProperties> = {
   themeBtn: {
     background: "none",
     border: "1px solid var(--border)",
-    borderRadius: "8px",
+    borderRadius: "999px",
     padding: "4px 8px",
     cursor: "pointer",
   },
@@ -135,11 +175,14 @@ const styles: Record<string, React.CSSProperties> = {
     flexDirection: "column",
     gap: "0.75rem",
     padding: "0.75rem 0",
+    marginTop: "0.75rem",
+    borderTop: "1px solid var(--border)",
   },
 
   mobileLink: {
     fontSize: "0.95rem",
     fontWeight: 500,
     color: "var(--text-primary)",
+    textDecoration: "none",
   },
 };
